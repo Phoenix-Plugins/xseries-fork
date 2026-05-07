@@ -44,10 +44,11 @@
     </modules>
 
     <properties>
-        <revision>16.6.0-phoenix.1</revision>
+        <revision>13.6.0-phoenix.1</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.deploy.skip>true</maven.deploy.skip> <!-- Override this in core module -->
+        <maven.test.skip>true</maven.test.skip>
 
         <!--##### Latest Versions #####-->
         <!-- https://repo.codemc.io/service/rest/repository/browse/nms/org/spigotmc/spigot/ -->
@@ -244,6 +245,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>3.2.7</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
@@ -325,10 +329,12 @@
                         <!-- https://maven.apache.org/surefire/maven-surefire-plugin/examples/toolchains.html -->
                         <!-- <jvm>${testJavaPath}</jvm>-->
                         <!-- You can also use the following argument from the cmd line: -->
-                        <!-- <dash><dash>toolchains "\.m2\toolchains.xml" -->
+                        <!-- <dash><dash>toolchains "\-m2\toolchains.xml" -->
+                        <!--
                         <jdkToolchain>
                             <version>[${testJava}]</version>
                         </jdkToolchain>
+                        -->
                     </configuration>
                 </plugin>
                 <plugin>
