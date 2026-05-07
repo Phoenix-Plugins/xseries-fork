@@ -654,7 +654,7 @@ public final class XItemStack {
 
         @SuppressWarnings("deprecation")
         private void legacySpawnEgg() {
-            if (!supports(11)) {
+            if (!supports(1, 11)) {
                 MaterialData data = item.getData();
                 if (data instanceof SpawnEgg) {
                     SpawnEgg spawnEgg = (SpawnEgg) data;
@@ -727,7 +727,7 @@ public final class XItemStack {
             ConfigurationSection mapSection = config.createSection("map");
 
             mapSection.set("scaling", map.isScaling());
-            if (supports(11)) {
+            if (supports(1, 11)) {
                 if (map.hasLocationName()) mapSection.set("location", map.getLocationName());
                 if (map.hasColor()) {
                     Color color = map.getColor();
@@ -735,7 +735,7 @@ public final class XItemStack {
                 }
             }
 
-            if (supports(14)) {
+            if (supports(1, 14)) {
                 if (map.hasMapView()) {
                     MapView mapView = map.getMapView();
                     ConfigurationSection view = mapSection.createSection("view");
@@ -757,7 +757,7 @@ public final class XItemStack {
 
                 if (book.getTitle() != null) bookInfo.set("title", book.getTitle());
                 if (book.getAuthor() != null) bookInfo.set("author", book.getAuthor());
-                if (supports(9)) {
+                if (supports(1, 9)) {
                     BookMeta.Generation generation = book.getGeneration();
                     if (generation != null) {
                         bookInfo.set("generation", book.getGeneration().toString());
@@ -811,7 +811,7 @@ public final class XItemStack {
 
         @SuppressWarnings({"deprecation", "StatementWithEmptyBody"})
         private void handlePotionMeta(PotionMeta meta) {
-            if (supports(9)) {
+            if (supports(1, 9)) {
                 if (SUPPORTS_PotionMeta_getBasePotionType) {
                     PotionType basePotionType = meta.getBasePotionType();
                     if (basePotionType != null)
@@ -880,7 +880,7 @@ public final class XItemStack {
         private void handleBlockStateMeta(BlockStateMeta meta) {
             BlockState state = safeBlockState(meta);
 
-            if (supports(11) && state instanceof ShulkerBox) {
+            if (supports(1, 11) && state instanceof ShulkerBox) {
                 ShulkerBox box = (ShulkerBox) state;
                 ConfigurationSection shulker = config.createSection("contents");
                 int i = 0;
@@ -901,7 +901,7 @@ public final class XItemStack {
 
         @SuppressWarnings("deprecation")
         private void handleAttributes(ItemMeta meta) {
-            if (supports(13)) {
+            if (supports(1, 13)) {
                 Multimap<Attribute, AttributeModifier> attributes = meta.getAttributeModifiers();
                 if (attributes != null) {
                     for (Map.Entry<Attribute, AttributeModifier> attribute : attributes.entries()) {
@@ -936,7 +936,7 @@ public final class XItemStack {
 
         @SuppressWarnings("deprecation")
         private void handleDurability(ItemMeta meta) {
-            if (supports(13)) {
+            if (supports(1, 13)) {
                 if (meta instanceof Damageable) {
                     Damageable damageable = (Damageable) meta;
                     if (damageable.hasDamage()) config.set("damage", damageable.getDamage());
@@ -1070,7 +1070,7 @@ public final class XItemStack {
 
         private void attributes() {
             // Atrributes - https://minecraft.wiki/w/Attribute
-            if (!supports(13)) return;
+            if (!supports(1, 13)) return;
 
             ConfigurationSection attributes = config.getConfigurationSection("attributes");
             if (attributes != null) {
@@ -1119,7 +1119,7 @@ public final class XItemStack {
 
         @SuppressWarnings("deprecation")
         private void legacySpawnEgg() {
-            if (!supports(11)) {
+            if (!supports(1, 11)) {
                 MaterialData data = item.getData();
                 if (data instanceof SpawnEgg) {
                     String creatureName = config.getString("creature");
@@ -1416,14 +1416,14 @@ public final class XItemStack {
             if (mapSection == null) return;
 
             map.setScaling(mapSection.getBoolean("scaling"));
-            if (supports(11)) {
+            if (supports(1, 11)) {
                 if (mapSection.isSet("location")) map.setLocationName(mapSection.getString("location"));
                 if (mapSection.isSet("color")) {
                     parseColor(mapSection.getString("color")).ifPresent(map::setColor);
                 }
             }
 
-            if (supports(14)) {
+            if (supports(1, 14)) {
                 ConfigurationSection view = mapSection.getConfigurationSection("view");
                 if (view != null) {
                     World world = Bukkit.getWorld(view.getString("world"));
@@ -1455,7 +1455,7 @@ public final class XItemStack {
             book.setAuthor(bookInfo.getString("author"));
             book.setPages(bookInfo.getStringList("pages"));
 
-            if (supports(9)) {
+            if (supports(1, 9)) {
                 String generationValue = bookInfo.getString("generation");
                 if (generationValue != null) {
                     BookMeta.Generation generation = Enums.getIfPresent(BookMeta.Generation.class, generationValue).orNull();
@@ -1515,7 +1515,7 @@ public final class XItemStack {
                     spawner.update(true);
                     bsm.setBlockState(spawner);
                 }
-            } else if (supports(11) && state instanceof ShulkerBox) {
+            } else if (supports(1, 11) && state instanceof ShulkerBox) {
                 ConfigurationSection shulkerSection = config.getConfigurationSection("contents");
                 if (shulkerSection != null) {
                     ShulkerBox box = (ShulkerBox) state;
@@ -1532,7 +1532,7 @@ public final class XItemStack {
             } else if (state instanceof Banner) {
                 Banner banner = (Banner) state;
                 ConfigurationSection patterns = config.getConfigurationSection("patterns");
-                if (!supports(14)) {
+                if (!supports(1, 14)) {
                     // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/diff/src/main/java/org/bukkit/craftbukkit/block/CraftBanner.java?until=b3dc236663a55450c69356e660c0c84f0abbb3aa
                     banner.setBaseColor(DyeColor.WHITE);
                 }
@@ -1563,7 +1563,7 @@ public final class XItemStack {
 
         @SuppressWarnings("StatementWithEmptyBody")
         private void handlePotionMeta(ItemMeta meta) {
-            if (supports(9)) {
+            if (supports(1, 9)) {
                 PotionMeta potion = (PotionMeta) meta;
 
                 for (String effects : config.getStringList("effects")) {
@@ -1694,7 +1694,7 @@ public final class XItemStack {
 
         @SuppressWarnings("deprecation")
         private void handleDurability() {
-            if (supports(13)) {
+            if (supports(1, 13)) {
                 if (meta instanceof Damageable) {
                     int damage = config.getInt("damage");
                     if (damage > 0) ((Damageable) meta).setDamage(damage);

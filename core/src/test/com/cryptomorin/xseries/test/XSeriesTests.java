@@ -351,7 +351,7 @@ public final class XSeriesTests {
         assertMaterial("INK_SACK:3", XMaterial.COCOA_BEANS);
         assertMaterial("INK_SACK:4", XMaterial.LAPIS_LAZULI);
 
-        if (XMaterial.supports(14)) {
+        if (XMaterial.supports(1, 14)) {
             assertNotNull(XMaterial.ACACIA_SIGN.parseItem(), "Acacia Sign is null");
             assertMaterial(XMaterial.RED_DYE, Material.RED_DYE);
             assertMaterial(XMaterial.GREEN_DYE, Material.GREEN_DYE);
@@ -359,7 +359,7 @@ public final class XSeriesTests {
 
             assertMaterial("RED_BED", "RED_BED");
             assertMaterial("GREEN_CONCRETE_POWDER", "CONCRETE_POWDER:13");
-        } else if (XMaterial.supports(13)) {
+        } else if (XMaterial.supports(1, 13)) {
             log("Black dye is " + XMaterial.BLACK_DYE.get() + " - " + XMaterial.BLACK_DYE.parseItem());
             assertMaterial(XMaterial.CYAN_DYE, Material.CYAN_DYE);
             assertMaterial(XMaterial.GREEN_DYE, Material.valueOf("CACTUS_GREEN"));

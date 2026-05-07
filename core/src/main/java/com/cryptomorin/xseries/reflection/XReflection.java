@@ -447,6 +447,7 @@ public final class XReflection {
 
     /**
      * Checks whether the server version is equal or greater than the given version.
+     * The major version number is always assumed to be 1.
      *
      * @param minorNumber the version to compare the server version with.
      * @return true if the version is equal or newer, otherwise false.
@@ -455,7 +456,7 @@ public final class XReflection {
      */
     @Contract(pure = true)
     public static boolean supports(int minorNumber) {
-        return MINOR_NUMBER >= minorNumber;
+        return supports(1, minorNumber, 0);
     }
 
     /**
@@ -463,12 +464,12 @@ public final class XReflection {
      */
     @Contract(pure = true)
     public static boolean supports(int majorNumber, int minorNumber, int patchNumber) {
-        if (majorNumber != 1) throw new IllegalArgumentException("Invalid major number: " + majorNumber);
-        return supports(minorNumber, patchNumber);
+        return MAJOR_NUMBER == majorNumber ? MINOR_NUMBER == minorNumber ? PATCH_NUMBER >= patchNumber : MINOR_NUMBER > minorNumber : MAJOR_NUMBER > majorNumber;
     }
 
     /**
      * Checks whether the server version is equal or greater than the given version.
+     * The major version number is always assumed to be 1.
      *
      * @param minorNumber the minor version to compare the server version with.
      * @param patchNumber the patch number to compare the server version with.
@@ -479,7 +480,7 @@ public final class XReflection {
      */
     @Contract(pure = true)
     public static boolean supports(int minorNumber, int patchNumber) {
-        return MINOR_NUMBER == minorNumber ? PATCH_NUMBER >= patchNumber : supports(minorNumber);
+        return supports(1, minorNumber, patchNumber);
     }
 
     /**

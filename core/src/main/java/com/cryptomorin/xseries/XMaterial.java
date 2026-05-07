@@ -199,7 +199,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     /**
      * Version 1.12+ interprets "BED" as BLACK_BED due to enum alphabetic ordering.
      */
-    BLACK_BED(supports(12) ? 15 : 0, "BED_BLOCK", "BED"),
+    BLACK_BED(supports(1, 12) ? 15 : 0, "BED_BLOCK", "BED"),
     BLACK_BUNDLE,
     BLACK_CANDLE,
     BLACK_CANDLE_CAKE,
@@ -222,7 +222,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     BLAZE_ROD,
     BLAZE_SPAWN_EGG(61, "MONSTER_EGG"),
     BLUE_BANNER(4, "STANDING_BANNER", "BANNER"),
-    BLUE_BED(supports(12) ? 11 : 0, "BED_BLOCK", "BED"),
+    BLUE_BED(supports(1, 12) ? 11 : 0, "BED_BLOCK", "BED"),
     BLUE_BUNDLE,
     BLUE_CANDLE,
     BLUE_CANDLE_CAKE,
@@ -268,7 +268,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     BRICK_STAIRS,
     BRICK_WALL,
     BROWN_BANNER(3, "STANDING_BANNER", "BANNER"),
-    BROWN_BED(supports(12) ? 12 : 0, "BED_BLOCK", "BED"),
+    BROWN_BED(supports(1, 12) ? 12 : 0, "BED_BLOCK", "BED"),
     BROWN_BUNDLE,
     BROWN_CANDLE,
     BROWN_CANDLE_CAKE,
@@ -466,7 +466,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     @XInfo(since = "1.14") CUT_SANDSTONE,
     @XInfo(since = "1.14") CUT_SANDSTONE_SLAB,
     CYAN_BANNER(6, "STANDING_BANNER", "BANNER"),
-    CYAN_BED(supports(12) ? 9 : 0, "BED_BLOCK", "BED"),
+    CYAN_BED(supports(1, 12) ? 9 : 0, "BED_BLOCK", "BED"),
     CYAN_BUNDLE,
     CYAN_CANDLE,
     CYAN_CANDLE_CAKE,
@@ -711,7 +711,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     GRASS_BLOCK("GRASS"),
     GRAVEL,
     GRAY_BANNER(8, "STANDING_BANNER", "BANNER"),
-    GRAY_BED(supports(12) ? 7 : 0, "BED_BLOCK", "BED"),
+    GRAY_BED(supports(1, 12) ? 7 : 0, "BED_BLOCK", "BED"),
     GRAY_BUNDLE,
     GRAY_CANDLE,
     GRAY_CANDLE_CAKE,
@@ -729,7 +729,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     GRAY_WALL_BANNER(8, "WALL_BANNER"),
     GRAY_WOOL(7, "WOOL"),
     GREEN_BANNER(2, "STANDING_BANNER", "BANNER"),
-    GREEN_BED(supports(12) ? 13 : 0, "BED_BLOCK", "BED"),
+    GREEN_BED(supports(1, 12) ? 13 : 0, "BED_BLOCK", "BED"),
     GREEN_BUNDLE,
     GREEN_CANDLE,
     GREEN_CANDLE_CAKE,
@@ -862,7 +862,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     LIGHT,
     LIGHTNING_ROD,
     LIGHT_BLUE_BANNER(12, "STANDING_BANNER", "BANNER"),
-    LIGHT_BLUE_BED(supports(12) ? 3 : 0, "BED_BLOCK", "BED"),
+    LIGHT_BLUE_BED(supports(1, 12) ? 3 : 0, "BED_BLOCK", "BED"),
     LIGHT_BLUE_BUNDLE,
     LIGHT_BLUE_CANDLE,
     LIGHT_BLUE_CANDLE_CAKE,
@@ -880,7 +880,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     LIGHT_BLUE_WALL_BANNER(12, "WALL_BANNER", "STANDING_BANNER", "BANNER"),
     LIGHT_BLUE_WOOL(3, "WOOL"),
     LIGHT_GRAY_BANNER(7, "STANDING_BANNER", "BANNER"),
-    LIGHT_GRAY_BED(supports(12) ? 8 : 0, "BED_BLOCK", "BED"),
+    LIGHT_GRAY_BED(supports(1, 12) ? 8 : 0, "BED_BLOCK", "BED"),
     LIGHT_GRAY_BUNDLE,
     LIGHT_GRAY_CANDLE,
     LIGHT_GRAY_CANDLE_CAKE,
@@ -906,7 +906,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     LILY_OF_THE_VALLEY,
     LILY_PAD("WATER_LILY"),
     LIME_BANNER(10, "STANDING_BANNER", "BANNER"),
-    LIME_BED(supports(12) ? 5 : 0, "BED_BLOCK", "BED"),
+    LIME_BED(supports(1, 12) ? 5 : 0, "BED_BLOCK", "BED"),
     LIME_BUNDLE,
     LIME_CANDLE,
     LIME_CANDLE_CAKE,
@@ -929,7 +929,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     LOOM,
     MACE,
     MAGENTA_BANNER(13, "STANDING_BANNER", "BANNER"),
-    MAGENTA_BED(supports(12) ? 2 : 0, "BED_BLOCK", "BED"),
+    MAGENTA_BED(supports(1, 12) ? 2 : 0, "BED_BLOCK", "BED"),
     MAGENTA_BUNDLE,
     MAGENTA_CANDLE,
     MAGENTA_CANDLE_CAKE,
@@ -1100,7 +1100,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     OMINOUS_TRIAL_KEY,
     OPEN_EYEBLOSSOM,
     ORANGE_BANNER(14, "STANDING_BANNER", "BANNER"),
-    ORANGE_BED(supports(12) ? 1 : 0, "BED_BLOCK", "BED"),
+    ORANGE_BED(supports(1, 12) ? 1 : 0, "BED_BLOCK", "BED"),
     ORANGE_BUNDLE,
     ORANGE_CANDLE,
     ORANGE_CANDLE_CAKE,
@@ -1169,7 +1169,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     PIG_SPAWN_EGG(90, "MONSTER_EGG"),
     PILLAGER_SPAWN_EGG,
     PINK_BANNER(9, "STANDING_BANNER", "BANNER"),
-    PINK_BED(supports(12) ? 6 : 0, "BED_BLOCK", "BED"),
+    PINK_BED(supports(1, 12) ? 6 : 0, "BED_BLOCK", "BED"),
     PINK_BUNDLE,
     PINK_CANDLE,
     PINK_CANDLE_CAKE,
@@ -1301,7 +1301,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     PUMPKIN_SEEDS,
     PUMPKIN_STEM,
     PURPLE_BANNER(5, "STANDING_BANNER", "BANNER"),
-    PURPLE_BED(supports(12) ? 10 : 0, "BED_BLOCK", "BED"),
+    PURPLE_BED(supports(1, 12) ? 10 : 0, "BED_BLOCK", "BED"),
     PURPLE_BUNDLE,
     PURPLE_CANDLE,
     PURPLE_CANDLE_CAKE,
@@ -1366,7 +1366,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     /**
      * Data value 14 or 0
      */
-    RED_BED(supports(12) ? 14 : 0, "BED_BLOCK", "BED"),
+    RED_BED(supports(1, 12) ? 14 : 0, "BED_BLOCK", "BED"),
     RED_BUNDLE,
     RED_CANDLE,
     RED_CANDLE_CAKE,
@@ -1772,7 +1772,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     WRITABLE_BOOK("BOOK_AND_QUILL"),
     WRITTEN_BOOK,
     YELLOW_BANNER(11, "STANDING_BANNER", "BANNER"),
-    YELLOW_BED(supports(12) ? 4 : 0, "BED_BLOCK", "BED"),
+    YELLOW_BED(supports(1, 12) ? 4 : 0, "BED_BLOCK", "BED"),
     YELLOW_BUNDLE,
     YELLOW_CANDLE,
     YELLOW_CANDLE_CAKE,
@@ -1897,6 +1897,9 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     @XInfo(since = "1.21.11") DIAMOND_NAUTILUS_ARMOR,
     @XInfo(since = "1.21.11") NETHERITE_NAUTILUS_ARMOR,
     @XInfo(since = "1.21.11") COPPER_NAUTILUS_ARMOR,
+
+    @XInfo(since = "26.1") GOLDEN_DANDELION,
+    @XInfo(since = "26.1") POTTED_GOLDEN_DANDELION,
 
     ;
 
@@ -2034,14 +2037,36 @@ public enum XMaterial implements XBase<XMaterial, Material> {
     }
 
     /**
+     * The current major version of the server.
+     *
+     * @return the current server major minor number.
+     * @see #supports(int, int)
+     */
+    public static int getVersionMajor() {
+        return Data.VERSION_MAJOR;
+    }
+    
+    /**
+     * The current minor version of the server.
+     *
+     * @return the current server version minor number.
+     * @see #supports(int, int)
+     */
+    public static int getVersionMinor() {
+        return Data.VERSION_MINOR;
+    }
+
+    /**
      * The current version of the server.
      *
      * @return the current server version minor number.
-     * @see #supports(int)
+     * @see #supports(int, int)
      * @since 2.0.0
+     * @deprecated Use {@link #getVersionMajor()} and {@link #getVersionMinor()} instead
      */
+    @Deprecated
     public static int getVersion() {
-        return Data.VERSION;
+        return XMaterial.getVersionMinor();
     }
 
     /**
@@ -2156,7 +2181,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
         byte data = (byte) (Data.ISFLAT || material.equals("MAP") || item.getType().getMaxDurability() > 0 ? 0 : item.getDurability());
 
         // Versions 1.9-1.12 didn't really use the items data value.
-        if (Data.SUPPORTS_SpawnEggMeta && !supports(13) && item.hasItemMeta() && material.equals("MONSTER_EGG")) {
+        if (Data.SUPPORTS_SpawnEggMeta && !supports(1, 13) && item.hasItemMeta() && material.equals("MONSTER_EGG")) {
             ItemMeta meta = item.getItemMeta();
             if (meta instanceof SpawnEggMeta) {
                 SpawnEggMeta egg = (SpawnEggMeta) meta;
@@ -2175,7 +2200,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
 
         // Potions used the items data value to store
         // information about the type of potion in 1.8
-        if (!supports(9) && material.equals("POTION")) {
+        if (!supports(1, 9) && material.equals("POTION")) {
             // Source: v1.8.8 org.bukkit.potion.Potion.fromDamage(int damage)
             int damage = item.getDurability();
             return ((damage & 16384) > 0) ? SPLASH_POTION : POTION;
@@ -2185,7 +2210,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
         // Currently, these are the only materials with a non-zero data value
         // that has been renamed after the flattening update.
         // If this happens to more materials in the future, I might have to change the system.
-        if (supports(13) && !supports(14)) {
+        if (supports(1, 13) && !supports(1, 14)) {
             // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/bukkit/diff/src/main/java/org/bukkit/Material.java?until=67d908a9830c71267ee740f5bddd728ce9c64cc7
             switch (material) {
                 case "CACTUS_GREEN":
@@ -2303,13 +2328,14 @@ public enum XMaterial implements XBase<XMaterial, Material> {
      * This is an internal API. Use {@link com.cryptomorin.xseries.reflection.XReflection#supports(int)} instead.
      * Checks if the specified version is the same version or higher than the current server version.
      *
-     * @param version the major version to be checked. "1." is ignored. E.g. 1.12 = 12 | 1.9 = 9
+     * @param major the major version to be checked. E.g. 26 for 26.
+     * @param minor the minor version to be checked. E.g. 1 for 26.1
      * @return true of the version is equal or higher than the current version.
      * @since 2.0.0
      */
     @ApiStatus.Internal
-    public static boolean supports(int version) {
-        return Data.VERSION >= version;
+    public static boolean supports(int major, int minor) {
+        return Data.VERSION_MAJOR > major || (Data.VERSION_MAJOR == major && Data.VERSION_MINOR >= minor);
     }
 
     public String[] getLegacy() {
@@ -2433,7 +2459,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
         if (!Data.ISFLAT && this == SPLASH_POTION) {
             base.setDurability((short) 16384); // Hard-coded as 'data' is only a byte.
         }
-        if (supports(9) && !supports(13) && base.hasItemMeta() && this.name().endsWith("_SPAWN_EGG")) {
+        if (supports(1, 9) && !supports(1, 13) && base.hasItemMeta() && this.name().endsWith("_SPAWN_EGG")) {
             ItemMeta meta = base.getItemMeta();
             if (meta instanceof SpawnEggMeta) {
                 SpawnEggMeta egg = (SpawnEggMeta) meta;
@@ -2558,7 +2584,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
          *
          * @since 1.0.0
          */
-        private static final int VERSION;
+        private static final int VERSION_MAJOR, VERSION_MINOR;
         private static final Map<String, Material> BUKKIT_NAME_MAPPINGS;
 
         static { // This needs to be right below VERSION because of initialization order.
@@ -2566,12 +2592,16 @@ public enum XMaterial implements XBase<XMaterial, Material> {
             // noinspection ConstantValue
             if (Bukkit.getServer() == null) {
                 System.err.println("Bukkit.getServer() is null. This should not happen when running a plugin normally.");
-                VERSION = 21;
+                VERSION_MAJOR = 1;
+                VERSION_MINOR = 21;
             } else {
                 String version = Bukkit.getVersion();
-                Matcher matcher = Pattern.compile("MC: \\d\\.(\\d+)").matcher(version);
+                Matcher matcher = Pattern.compile("MC: (\\d+)\\.(\\d+)").matcher(version);
 
-                if (matcher.find()) VERSION = Integer.parseInt(matcher.group(1));
+                if (matcher.find()) {
+                    VERSION_MAJOR = Integer.parseInt(matcher.group(1));
+                    VERSION_MINOR = Integer.parseInt(matcher.group(2));
+                }
                 else throw new IllegalArgumentException("Failed to parse server version: " + version);
             }
         }
@@ -2617,7 +2647,7 @@ public enum XMaterial implements XBase<XMaterial, Material> {
          *
          * @since 3.0.0
          */
-        private static final boolean ISFLAT = supports(13);
+        private static final boolean ISFLAT = supports(1, 13);
 
         /**
          * Added around Minecraft v1.11

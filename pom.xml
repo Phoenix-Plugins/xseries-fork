@@ -56,12 +56,12 @@
         <!-- Note: timestamped snapshots are used because a recent Maven Central policy update made it so that it's impossible to -->
         <!-- publish your artifact if it has SNAPSHOT depednencies without any prior notice. -->
         <!-- Error: Dependencies to SNAPSHOT versions not allowed for dependency: org.spigotmc:spigot -->
-        <spigotVersion>1.21.11-R0.1-20251210.073034-1</spigotVersion>
+        <spigotVersion>26.1-R0.1-20260325.170250-2</spigotVersion>
         <jopt>5.0.4</jopt>
         <testVer/>
         <testJavaPath/>
-        <testJava>21</testJava>
-        <asm>9.7.1</asm>
+        <testJava>25</testJava>
+        <asm>9.9.1</asm>
     </properties>
 
     <issueManagement>
@@ -566,8 +566,16 @@
         <profile>
             <id>latest</id>
             <properties>
-                <nms>21_R0</nms>
-                <testJava>21</testJava>
+                <nms>26_R0</nms>
+                <testJava>25</testJava>
+            </properties>
+        </profile>
+        <profile>
+            <id>26</id>
+            <properties>
+                <nms>26_R0</nms>
+                <spigotVersion>26.1-R0.1-SNAPSHOT</spigotVersion>
+                <testJava>25</testJava>
             </properties>
         </profile>
         <profile>

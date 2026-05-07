@@ -208,10 +208,10 @@ public final class XReflectASM<T extends ReflectiveProxyObject> extends ClassVis
                 Class.forName("jdk.internal.reflect.MagicAccessorImpl");
                 magicAccessor = "jdk/internal/reflect/MagicAccessorImpl";
             } catch (ClassNotFoundException ex) {
-                IllegalStateException state = new IllegalStateException("Cannot find MagicAccessorImpl class");
-                state.addSuppressed(e);
-                state.addSuppressed(ex);
-                throw state;
+                // MagicAccessorImpl has been removed https://github.com/openjdk/jdk/commit/d6eddcdaf92f2352266ba519608879141997cd63
+                // Therefore throwing an exception here would prevent this class from being used on Java 25 (required
+                // for Minecraft 26.1). Instead, the class name is set to null as it is currently not used anyway.
+                magicAccessor = null;
             }
         }
 
