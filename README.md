@@ -5,7 +5,7 @@
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-dark_green.svg)](https://shields.io/)
 [![Java](https://img.shields.io/badge/Java-8-dark_green.svg)](https://shields.io/)
 [![Build Status](https://api.travis-ci.com/CryptoMorin/XSeries.svg?branch=master)](https://app.travis-ci.com/github/CryptoMorin/XSeries)
-![maven-central](https://img.shields.io/maven-central/v/com.github.cryptomorin/XSeries)
+[![Phoenix Repo](https://img.shields.io/badge/repo-phoenixplugins.com-orange)](https://repo.phoenixplugins.com)
 [![CodeFactor](https://www.codefactor.io/repository/github/cryptomorin/xseries/badge)](https://www.codefactor.io/repository/github/cryptomorin/xseries)
 
 Library mainly designed to provide cross-version support for Minecraft Bukkit plugins,
@@ -47,14 +47,18 @@ another class ([ParticleDisplay](core/src/main/java/com/cryptomorin/xseries/part
 All XBase/XModule classes also depend on these base classes and
 also [XRegistry](core/src/main/java/com/cryptomorin/xseries/base).
 
-#### Maven ![maven-central](https://img.shields.io/maven-central/v/com.github.cryptomorin/XSeries)
+#### Maven (Phoenix fork)
 
 ```xml
+<repository>
+    <id>phoenix-repo</id>
+    <url>https://repo.phoenixplugins.com/releases</url>
+</repository>
 
 <dependency>
-    <groupId>com.github.cryptomorin</groupId>
+    <groupId>com.phoenixplugins</groupId>
     <artifactId>XSeries</artifactId>
-    <version>version</version>
+    <version>13.6.0-phoenix.1</version>
 </dependency>
 ```
 
@@ -80,10 +84,10 @@ Gradle
 
 ```kotlin
 repositories {
-    mavenCentral()
+    maven("https://repo.phoenixplugins.com/releases")
 }
 dependencies {
-    implementation("com.github.cryptomorin:XSeries:version")
+    implementation("com.phoenixplugins:XSeries:13.6.0-phoenix.1")
 }
 ```
 

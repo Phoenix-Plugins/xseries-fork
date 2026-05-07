@@ -26,7 +26,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.cryptomorin</groupId>
+    <groupId>com.phoenixplugins</groupId>
     <artifactId>parent</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
@@ -44,7 +44,7 @@
     </modules>
 
     <properties>
-        <revision>13.6.0</revision>
+        <revision>13.6.0-phoenix.1</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.deploy.skip>true</maven.deploy.skip> <!-- Override this in core module -->
@@ -97,13 +97,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <!-- https://repo1.maven.org/maven2/com/github/cryptomorin/XSeries/ -->
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>phoenix-repo</id>
+            <url>https://repo.phoenixplugins.com/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>phoenix-repo</id>
+            <url>https://repo.phoenixplugins.com/releases</url>
         </repository>
     </distributionManagement>
 
@@ -249,20 +248,6 @@
                         <!-- Apparently this is needed because it's a bug with maven JavaDoc plugin not being able to find the exe by itself. -->
                         <!-- <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>-->
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>3.2.7</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -447,19 +432,6 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <!-- https://mvnrepository.com/artifact/org.sonatype.central/central-publishing-maven-plugin -->
-                    <!-- https://central.sonatype.org/publish/publish-portal-maven -->
-                    <groupId>org.sonatype.central</groupId>
-                    <artifactId>central-publishing-maven-plugin</artifactId>
-                    <version>0.8.0</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <publishingServerId>central</publishingServerId>
-                        <!--                        <autoPublish>true</autoPublish>-->
-                        <!--                        <waitUntil>published</waitUntil>-->
-                    </configuration>
                 </plugin>
                 <!--                <plugin>-->
                 <!--                    <groupId>org.sonatype.plugins</groupId>-->

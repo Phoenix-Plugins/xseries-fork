@@ -30,6 +30,8 @@ target/
 repo/
 out/
 META-INF/
+/settings.xml
+/.mvn-settings.xml
 
 # Eclipse IDE
 .project
