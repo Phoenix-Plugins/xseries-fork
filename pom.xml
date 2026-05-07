@@ -44,7 +44,7 @@
     </modules>
 
     <properties>
-        <revision>13.6.0</revision>
+        <revision>16.6.0-phoenix.1</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.deploy.skip>true</maven.deploy.skip> <!-- Override this in core module -->
@@ -89,21 +89,11 @@
         </license>
     </licenses>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
-    </parent>
-
     <distributionManagement>
-        <snapshotRepository>
-            <!-- https://repo1.maven.org/maven2/com/github/cryptomorin/XSeries/ -->
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>nexus-repo</id>
+            <name>Phoenix Nexus Jenkins</name>
+            <url>https://repo.phoenixplugins.com/repository/jenkins-artifacts</url>
         </repository>
     </distributionManagement>
 
